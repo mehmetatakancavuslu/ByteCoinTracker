@@ -58,13 +58,37 @@
 			children = (
 				E6448C8B24A92B3C00D344BF /* AppDelegate.swift */,
 				E6448C8D24A92B3C00D344BF /* SceneDelegate.swift */,
-				E6448C8F24A92B3C00D344BF /* ViewController.swift */,
-				E6448C9124A92B3C00D344BF /* Main.storyboard */,
+				E6448CA124A92BFC00D344BF /* Model */,
+				E6448C9F24A92BEE00D344BF /* View */,
+				E6448CA024A92BF400D344BF /* Controller */,
 				E6448C9424A92B3D00D344BF /* Assets.xcassets */,
 				E6448C9624A92B3D00D344BF /* LaunchScreen.storyboard */,
 				E6448C9924A92B3D00D344BF /* Info.plist */,
 			);
 			path = ByteCoinTracker;
+			sourceTree = "<group>";
+		};
+		E6448C9F24A92BEE00D344BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6448C9124A92B3C00D344BF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6448CA024A92BF400D344BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6448C8F24A92B3C00D344BF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E6448CA124A92BFC00D344BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
