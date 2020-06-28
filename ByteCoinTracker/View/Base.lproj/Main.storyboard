@@ -42,7 +42,7 @@
                                                     <constraint firstAttribute="height" constant="90" id="LVp-cP-zuY"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10221 USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-I8-4T0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10221 USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-I8-4T0">
                                                 <rect key="frame" x="100" y="0.0" width="190" height="90"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                 <color key="textColor" name="Background"/>
@@ -62,6 +62,12 @@
                                     <constraint firstAttribute="width" constant="300" id="wpo-uh-2jt"/>
                                     <constraint firstItem="VNv-Uc-CJY" firstAttribute="leading" secondItem="3NY-GN-lxo" secondAttribute="leading" id="xm7-UV-Z1w"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRY-9b-1vu">
                                 <rect key="frame" x="0.0" y="646" width="414" height="216"/>

@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var currecyPicker: UIPickerView!
     
+    var currency: String?
+    
     var coinManager = CoinManager()
     
     override func viewDidLoad() {
@@ -20,6 +22,8 @@ class MainViewController: UIViewController {
         
         currecyPicker.dataSource = self
         currecyPicker.delegate = self
+        
+        coinManager.delegate = self
         
     }
 
@@ -50,8 +54,30 @@ extension MainViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let selectedCurrency = coinManager.currencyArray[row]
+        currency = selectedCurrency
         coinManager.getCoinPrice(for: selectedCurrency)
         
     }
     
+}
+
+// MARK: - CoinManagerDelegate
+
+extension MainViewController: CoinManagerDelegate {
+    
+    func didGetCoinRate(_ coinManager: CoinManager, rate: Double) {
+        
+        let rateString = String(format: "%.2f", rate)
+        let value = "\(rateString) \(currency ?? "")"
+            
+        DispatchQueue.main.async {
+            self.valueLabel.text = value
+        }
+        
+    }
+    
+    func didFailWithError(_ coinManager: CoinManager, error: Error) {
+        print(error)
+    }
+
 }

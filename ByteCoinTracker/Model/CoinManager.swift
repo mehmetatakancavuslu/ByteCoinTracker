@@ -10,7 +10,7 @@ import Foundation
 
 protocol CoinManagerDelegate {
     
-//    func didGetCoinPrice(_ coinManager: CoinManager, coin: CoinModel)
+    func didGetCoinRate(_ coinManager: CoinManager, rate: Double)
     func didFailWithError(_ coinManager: CoinManager, error: Error)
     
 }
@@ -33,13 +33,14 @@ struct CoinManager {
         let task = session.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
-                // handle the error
+                self.delegate?.didFailWithError(self, error: error!)
                 return
             }
             
             guard let safeData = data else { return }
+            guard let rate = self.parseJSON(safeData) else { return }
             
-            let coin = self.parseJSON(safeData)
+            self.delegate?.didGetCoinRate(self, rate: rate)
             
         }
         
